@@ -1,0 +1,5 @@
+.node-editor {
+    background-color: rgba(0,0,0,0); 
+    flex-grow: 1;
+    position: relative;
+}

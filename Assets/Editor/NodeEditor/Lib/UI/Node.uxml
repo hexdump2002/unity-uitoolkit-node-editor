@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/NodeEditor/Lib/UI/Node.uss" />
+    <ui:VisualElement class="node">
+        <EditableLabel class="header" />
+        <ui:VisualElement style="flex-grow: 1; flex-direction: row;">
+            <ui:VisualElement name="Inputs" class="socket-array"/>
+            <ui:VisualElement name="Content" style="flex-grow: 1; max-width: initial;" />
+            <ui:VisualElement name="Outputs" class="socket-array" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

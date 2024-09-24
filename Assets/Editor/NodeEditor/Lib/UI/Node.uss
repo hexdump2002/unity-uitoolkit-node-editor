@@ -1,0 +1,25 @@
+.node {
+	position:relative;
+	flex-grow: 1; 
+	flex-direction: column;
+	background-color: rgba(62, 62, 62, 255); 
+	border-left-width: 10px; 
+	border-top-width: 10px; 
+	border-bottom-width: 10px; 
+	border-right-width: 10px;
+}
+
+.header {
+	flex-direction: column; 
+	height: 30px;
+	background-color: #505000;
+}
+
+.socket-array {
+	flex-grow: 1; 
+	max-width: 20px; 
+	min-width: 20px; 
+	align-items: auto; 
+	justify-content: space-evenly;
+	align-self: auto; 
+}

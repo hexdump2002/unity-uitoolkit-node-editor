@@ -1,0 +1,7 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Editor/NodeEditor/Lib/UI/NodeEditor.uss?fileID=7433441132597879392&amp;guid=f605b42132ef5ad4f8035d3d7a2e39bc&amp;type=3#NodeEditor" />
+    <ui:VisualElement name="nodes-container" focusable="false" class="node-editor">
+        <ui:VisualElement name="NodesLayer" style="flex-grow: 1;" />
+        <ui:VisualElement name="ConnectionsLayer" picking-mode="Ignore" style="flex-grow: 1; position: absolute; right: 0; bottom: 0; left: 0; top: 0;" />
+    </ui:VisualElement>
+</ui:UXML>
