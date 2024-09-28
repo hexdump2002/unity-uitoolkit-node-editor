@@ -140,8 +140,8 @@ public partial class NodeEditor : VisualElement
         if (_state==NodeEditorState.DraggingNodes) {
             Vector2 mousePos = evt.mousePosition;
             Vector2 diff = new Vector2(mousePos.x, mousePos.y);
-            _node.style.left = mousePos.x;
-            _node.style.top = mousePos.y;
+            _node.style.left = mousePos.x-100;
+            _node.style.top = mousePos.y-100;
             evt.StopPropagation();
             _connectionsLayer.MarkDirtyRepaint();
         }
@@ -157,7 +157,6 @@ public partial class NodeEditor : VisualElement
 
     public void OnGenerateVisualContent(MeshGenerationContext mgc) {
         var painter = mgc.painter2D;
-        Debug.Log("Draw curves");
         // Draw all stored curves
         foreach(var nodeConnection in _outputNodeSocketConnections) {
             NodeSocket outputConnection = nodeConnection.Key;
@@ -180,9 +179,21 @@ public partial class NodeEditor : VisualElement
 
         // Draw the current moving curve
         if (_state == NodeEditorState.ConnectingNodes) {
+            //Debug.Log(startingSocketPosition+ "::: "+ new Vector2(_node.localBound.xMin, _node.localBound.yMin));
+            /*painter.BeginPath();
+            painter.lineWidth = 5;
+            painter.strokeColor = Color.yellow;
+            
+            painter.MoveTo(_node.GetTopLeft());
+            painter.LineTo(_node.GetTopRight());
+            painter.LineTo(_node.GetBottomRight());
+            painter.LineTo(_node.GetBottomLeft());
+            painter.LineTo(_node.GetTopLeft());
+            painter.Stroke();*/
+
             //TODO: Why yMin - height. It should be yMin + height/2
-            Vector2 startingSocketPosition = new Vector2(_connectingStartingNodeSocket.worldBound.xMin + _connectingStartingNodeSocket.worldBound.width / 2, _connectingStartingNodeSocket.worldBound.yMin - _connectingStartingNodeSocket.worldBound.height );
             painter.BeginPath();
+            Vector2 startingSocketPosition = _connectingStartingNodeSocket.GetMiddlePoint();
             painter.lineWidth = 5;
             painter.strokeColor = Color.yellow;
             painter.MoveTo(startingSocketPosition);
