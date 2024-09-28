@@ -1,5 +1,18 @@
 .node-editor {
-    background-color: rgba(0,0,0,0); 
+    background-color: rgba(40,40,40,255); 
     flex-grow: 1;
     position: relative;
+}
+
+.node-editor-connections-layer {
+    flex-grow: 1; 
+    position: absolute; 
+    right: 0; 
+    bottom: 0; 
+    left: 0; 
+    top: 0;
+}
+
+.node-editor-nodes-layer {
+    flex-grow: 1; 
 }
